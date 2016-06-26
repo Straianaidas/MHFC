@@ -104,7 +104,7 @@ public class MHFCEntityRegistry {
 			return -1;
 		}
 		int monsterID = MHFCEntityRegistry.getMobID();
-		EntityRegistry.registerModEntity(clazz, name, monsterID, mod, 64, 1, true);
+		EntityRegistry.registerModEntity(clazz, name, monsterID, mod, 64,3, true);
 		registeredMobs.add(clazz);
 		MHFCMobList.addMapping(clazz, name, monsterID);
 		return monsterID;
@@ -115,7 +115,7 @@ public class MHFCEntityRegistry {
 			return -1;
 		}
 		int monsterID = MHFCEntityRegistry.getMobID();
-		EntityRegistry.registerModEntity(clazz, name, monsterID, mod, 64, 1, true);
+		EntityRegistry.registerModEntity(clazz, name, monsterID, mod, 64, 3, true);
 		registeredMobs.add(clazz);
 		MHFCMobList.addMapping(clazz, name, monsterID, foreground, background);
 		return monsterID;
@@ -126,7 +126,7 @@ public class MHFCEntityRegistry {
 			return -1;
 		}
 		int projectileID = MHFCEntityRegistry.getProjID();
-		EntityRegistry.registerModEntity(clazz, name, projectileID, mod, 64, 10, true);
+		EntityRegistry.registerModEntity(clazz, name, projectileID, mod, 64, 3, true);
 		registeredProjectiles.add(clazz);
 		return projectileID;
 	}
@@ -136,7 +136,7 @@ public class MHFCEntityRegistry {
 			return -1;
 		}
 		int projectileID = MHFCEntityRegistry.getProjID();
-		EntityRegistry.registerModEntity(clazz, name, projectileID, mod, customTrackingRange, 10, true);
+		EntityRegistry.registerModEntity(clazz, name, projectileID, mod, customTrackingRange, 3, true);
 		registeredProjectiles.add(clazz);
 		return projectileID;
 	}

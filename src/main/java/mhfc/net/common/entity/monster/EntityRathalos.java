@@ -7,7 +7,6 @@ import com.github.worldsender.mcanm.client.model.util.RenderPassInformation;
 import mhfc.net.common.ai.IActionManager;
 import mhfc.net.common.ai.IExecutableAction;
 import mhfc.net.common.ai.IStancedEntity;
-import mhfc.net.common.ai.entity.boss.rathalos.RathalosBiteLeft;
 import mhfc.net.common.ai.entity.boss.rathalos.RathalosDeath;
 import mhfc.net.common.ai.entity.boss.rathalos.RathalosIdle;
 import mhfc.net.common.ai.entity.boss.rathalos.RathalosWander;
@@ -80,13 +79,6 @@ public class EntityRathalos extends EntityMHFCBase<EntityRathalos>
 		ActionManagerBuilder<EntityRathalos> stancedAttackManager = new ActionManagerBuilder<>();
 		stancedAttackManager.registerAction(new RathalosIdle());
 		stancedAttackManager.registerAction(new RathalosWander());
-//	//	stancedAttackManager.registerAction(new RathalosBiteLeft());
-	//	stancedAttackManager.registerAction(new ChargeAttack());
-	//	stancedAttackManager.registerAction(new FireballAttack());
-	//	stancedAttackManager.registerAction(new FlyStart());
-	//	stancedAttackManager.registerAction(new JumpFireball());
-	//	stancedAttackManager.registerAction(new TailSpin());
-	//	stancedAttackManager.registerAction(new FlyLand());
 		stancedAttackManager.registerAction(setDeathAction(new RathalosDeath()));
 		return stancedAttackManager.build(this);
 	}
