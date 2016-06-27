@@ -3,7 +3,7 @@ package mhfc.net.common.entity.projectile;
 import java.util.List;
 
 import mhfc.net.common.entity.type.EntityMHFCBase;
-import mhfc.net.common.helper.MHFCDamageHelper;
+import mhfc.net.common.weapon.stats.ElementalType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFlameFX;
 import net.minecraft.entity.Entity;
@@ -18,7 +18,7 @@ import net.minecraft.world.World;
  * ~~ This will be base of all Entity Breathe of the monsters. Nothing special thou just a base projectile .. Make a
  * constructor and include your specified monster. add special attributes base on the methods and functions below..
  * Simple @author Heltrato
- * 
+ *
  */
 public class EntityBreathe extends EntityThrowable {
 
@@ -33,6 +33,7 @@ public class EntityBreathe extends EntityThrowable {
 		flameable = isFire;
 	}
 
+	@Override
 	protected float getGravityVelocity() {
 		return 0.01F;
 	}
@@ -46,14 +47,15 @@ public class EntityBreathe extends EntityThrowable {
 
 		for (Entity entity : list) {
 			if (getDistanceSqToEntity(entity) <= 6.25D) {
-				if (flameable && entity instanceof EntityPlayer)
-					entity.attackEntityFrom(MHFCDamageHelper.fireelement, 115);
+				if (flameable && entity instanceof EntityPlayer) {
+					entity.attackEntityFrom(ElementalType.Fire.damageSource, 115);
+				}
 				entity.setFire(5);
 				if (entity instanceof EntityMHFCBase) {
-					entity.attackEntityFrom(MHFCDamageHelper.fireelement, 335);
+					entity.attackEntityFrom(ElementalType.Fire.damageSource, 335);
 
 				} else {
-					entity.attackEntityFrom(MHFCDamageHelper.fireelement, 9999999);
+					entity.attackEntityFrom(ElementalType.Fire.damageSource, 9999999);
 				}
 
 			}

@@ -1,5 +1,6 @@
 {
     "bowgun.shot": {"category": "player", "sounds": ["weapons/bowgunshot"]},
+    "huntinghorn.play": {"category": "master", "sounds": ["weapons/huntinghorn2"]},
     
     "barroth.idle": {"category": "hostile", "sounds": ["mob/barroth/idle1", "mob/barroth/idle2"]},
     "barroth.charge": {"category": "hostile", "sounds": ["mob/barroth/charge"]},

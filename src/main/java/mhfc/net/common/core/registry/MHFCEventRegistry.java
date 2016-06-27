@@ -41,6 +41,7 @@ public class MHFCEventRegistry {
 	private static void registerWorldEventHandlers() {
 		FMLCommonHandler.instance().bus().register(ConnectionEventHandler.instance);
 		FMLCommonHandler.instance().bus().register(CombatEventHandler.instance);
+		MinecraftForge.EVENT_BUS.register(CombatEventHandler.instance);
 	}
 
 	private static void registerEntityEventHandlers() {}

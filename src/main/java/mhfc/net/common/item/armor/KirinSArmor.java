@@ -44,12 +44,7 @@ public class KirinSArmor extends ItemArmor {
 	}
 
 	@Override
-	@SuppressWarnings("unchecked")
-	public void addInformation(
-			ItemStack par1ItemStack,
-			EntityPlayer par2EntityPlayer,
-			@SuppressWarnings("rawtypes") List par3List,
-			boolean par4) {
+	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
 		par3List.add("All Resistance H");
 		par3List.add("Thunder + 40");
 		par3List.add("Aura");
@@ -66,14 +61,14 @@ public class KirinSArmor extends ItemArmor {
 
 	@Override
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-
 		if (stack.getItem() == MHFCItemRegistry.armor_kirinS_helm
 				|| stack.getItem() == MHFCItemRegistry.armor_kirinS_chest
 				|| stack.getItem() == MHFCItemRegistry.armor_kirinS_boots) {
 			return MHFCReference.armor_kirinS_tex1;
 		}
-		if (stack.getItem() == MHFCItemRegistry.armor_kirinS_legs)
+		if (stack.getItem() == MHFCItemRegistry.armor_kirinS_legs) {
 			return MHFCReference.armor_kirinS_tex2;
+		}
 		return MHFCReference.armor_null_tex;
 	}
 
@@ -83,16 +78,18 @@ public class KirinSArmor extends ItemArmor {
 
 		ModelBiped armorModel = null;
 
-		if (itemStack == null || !(itemStack.getItem() instanceof ItemArmor))
+		if (itemStack == null || !(itemStack.getItem() instanceof ItemArmor)) {
 			return null;
+		}
 
 		int type = ((ItemArmor) itemStack.getItem()).armorType;
 
 		if (type == 1 || type == 3 || type == 0) {
 			armorModel = MHFCArmorModelHelper.kirinS;
 		}
-		if (armorModel == null)
+		if (armorModel == null) {
 			return null;
+		}
 		armorModel.bipedHead.showModel = armorSlot == 0;
 		armorModel.bipedHeadwear.showModel = armorSlot == 0;
 		armorModel.bipedBody.showModel = armorSlot == 1 || armorSlot == 2;
@@ -124,8 +121,10 @@ public class KirinSArmor extends ItemArmor {
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack armor) {
 		// The player needs to wear all armor pieces, so when we check on the helmet it's enough
-		if (this.armorType != 0)
+
+		if (this.armorType != 0) {
 			return;
+		}
 		ItemStack boots = player.getCurrentArmor(0);
 		ItemStack legs = player.getCurrentArmor(1);
 		ItemStack chest = player.getCurrentArmor(2);
@@ -133,9 +132,9 @@ public class KirinSArmor extends ItemArmor {
 		if (chest != null && legs != null && boots != null && chest.getItem() == MHFCItemRegistry.armor_kirinS_chest
 				&& boots.getItem() == MHFCItemRegistry.armor_kirinS_boots
 				&& legs.getItem() == MHFCItemRegistry.armor_kirinS_legs) {
-			if (!DonatorSystem.checkKirinS(player))
+			if (!DonatorSystem.checkKirinS(player)) {
 				return;
-			else {
+			} else {
 				player.addPotionEffect(new PotionEffect(MHFCPotionRegistry.kirin_blessing.id, 15, 1));
 				world.spawnParticle(
 						"cloud",

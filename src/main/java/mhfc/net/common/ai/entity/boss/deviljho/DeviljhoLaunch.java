@@ -40,7 +40,7 @@ public class DeviljhoLaunch extends AIAnimatedAction<EntityDeviljho> {
 			if (entity.getAttackTarget() == null) {
 				return;
 			}
-			getEntity().playSound("mhfc:deviljho.rockthrow", 1.0F, 1.0F);
+			getEntity().playSound("mhfc:deviljho.rockthrow", 2.0F, 1.0F);
 
 			AIUtils.damageCollidingEntities(getEntity(), damageCalc);
 			AIGameplayComposition.AILaunchGameply(entity, 0, 1.4, 0);

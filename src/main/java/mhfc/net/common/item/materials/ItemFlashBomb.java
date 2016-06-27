@@ -2,6 +2,7 @@ package mhfc.net.common.item.materials;
 
 import mhfc.net.MHFCMain;
 import mhfc.net.common.entity.projectile.EntityFlashBomb;
+import mhfc.net.common.item.ItemColor;
 import mhfc.net.common.util.lib.MHFCReference;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,19 +17,17 @@ public class ItemFlashBomb extends Item {
 		setCreativeTab(MHFCMain.mhfctabs);
 		setMaxStackSize(2);
 	}
-	
+
 	@Override
 	public void registerIcons(IIconRegister par1IconRegister) {
-		this.itemIcon = par1IconRegister
-				.registerIcon(MHFCReference.item_flashbomb_icon);
+		this.itemIcon = par1IconRegister.registerIcon(MHFCReference.base_monster_gem);
 	}
 
 	@Override
-	public ItemStack onItemRightClick(ItemStack itemStack, World world,
-		EntityPlayer player) {
-		if (world.isRemote)
+	public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer player) {
+		if (world.isRemote) {
 			return itemStack;
-		else {
+		} else {
 			EntityFlashBomb bomb = new EntityFlashBomb(world, player);
 			world.spawnEntityInWorld(bomb);
 
@@ -37,5 +36,10 @@ public class ItemFlashBomb extends Item {
 			}
 			return itemStack;
 		}
+	}
+
+	@Override
+	public int getColorFromItemStack(ItemStack stack, int renderLayer) {
+		return ItemColor.YELLOW.getRGB();
 	}
 }

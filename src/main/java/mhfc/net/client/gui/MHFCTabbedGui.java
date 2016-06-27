@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.lwjgl.opengl.GL11;
 
-import mhfc.net.common.util.gui.MHFCGuiUtil;
+import mhfc.net.client.util.gui.MHFCGuiUtil;
 import mhfc.net.common.util.lib.MHFCReference;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.inventory.Container;
@@ -116,8 +116,9 @@ public abstract class MHFCTabbedGui extends GuiContainer {
 		int diff = tabHeight + tabSplit;
 		int realWidth = 0;
 		for (int i = 0; i < tabs.size(); i++) {
-			if (i == tabIndex)
+			if (i == tabIndex) {
 				continue;
+			}
 			GL11.glPushMatrix();
 			TabAttribute tabAtt = tabs.get(i);
 			realWidth = tabWidth + tabAtt.tabDelta;
@@ -224,8 +225,9 @@ public abstract class MHFCTabbedGui extends GuiContainer {
 	@Override
 	public void updateScreen() {
 		IMHFCTab tab = tabs.get(tabIndex).tab;
-		if (tab != null)
+		if (tab != null) {
 			tab.updateTab();
+		}
 		super.updateScreen();
 	}
 

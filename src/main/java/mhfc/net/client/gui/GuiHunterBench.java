@@ -3,6 +3,7 @@ package mhfc.net.client.gui;
 import static net.minecraftforge.client.IItemRenderer.ItemRenderType.ENTITY;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -13,13 +14,13 @@ import org.lwjgl.opengl.GL11;
 import mhfc.net.client.container.ContainerHunterBench;
 import mhfc.net.client.gui.GuiListItem.Alignment;
 import mhfc.net.client.quests.MHFCRegQuestVisual;
+import mhfc.net.client.util.gui.MHFCGuiUtil;
 import mhfc.net.common.core.registry.MHFCEquipementRecipeRegistry;
 import mhfc.net.common.crafting.recipes.equipment.EquipmentRecipe;
 import mhfc.net.common.crafting.recipes.equipment.EquipmentRecipe.RecipeType;
 import mhfc.net.common.item.ItemType;
 import mhfc.net.common.item.ItemType.GeneralType;
 import mhfc.net.common.tile.TileHunterBench;
-import mhfc.net.common.util.gui.MHFCGuiUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.model.ModelBiped;
@@ -143,8 +144,9 @@ public class GuiHunterBench extends MHFCTabbedGui {
 
 		@Override
 		public boolean containsSlot(Slot slot) {
-			if (slot.inventory == tileEntity || (slot.inventory instanceof InventoryPlayer && slot.slotNumber > 51))
+			if (slot.inventory == tileEntity || (slot.inventory instanceof InventoryPlayer && slot.slotNumber > 51)) {
 				return true;
+			}
 			return false;
 		}
 
@@ -181,24 +183,24 @@ public class GuiHunterBench extends MHFCTabbedGui {
 	protected abstract class FilteredRecipeTab extends BenchEntityTab {
 
 		protected RecipeType recipeType;
-		protected ItemType[] itemTypes;
+		protected List<ItemType> itemTypes;
 
 		protected Map<ItemType, Integer> indicesOfTypes;
 		protected Map<EquipmentRecipe, Integer> indicesOfRecipes;
 		protected ClickableGuiList<TypeItem> typeList;
 		protected ClickableGuiList<RecipeItem> recipeList;
 
-		public FilteredRecipeTab(TileHunterBench bench, RecipeType recipeType, ItemType[] itemTypes) {
+		public FilteredRecipeTab(TileHunterBench bench, RecipeType recipeType, List<ItemType> itemTypes) {
 			super(bench);
 
 			this.recipeType = recipeType;
 			this.itemTypes = itemTypes;
 
-			indicesOfRecipes = new HashMap<EquipmentRecipe, Integer>();
-			indicesOfTypes = new HashMap<ItemType, Integer>();
+			indicesOfRecipes = new HashMap<>();
+			indicesOfTypes = new HashMap<>();
 
-			typeList = new ClickableGuiList<TypeItem>(70, ySize - 24);
-			recipeList = new ClickableGuiList<RecipeItem>(70, ySize - 24, 20);
+			typeList = new ClickableGuiList<>(70, ySize - 24);
+			recipeList = new ClickableGuiList<>(70, ySize - 24, 20);
 			typeList.setAlignment(Alignment.MIDDLE);
 			initializeTypeList();
 			addScreenComponent(typeList, new Vector2f(78, 12));
@@ -221,9 +223,9 @@ public class GuiHunterBench extends MHFCTabbedGui {
 		}
 
 		private void initializeTypeList() {
-			for (int i = 0; i < itemTypes.length; i++) {
-				indicesOfTypes.put(itemTypes[i], typeList.size());
-				typeList.add(new TypeItem(itemTypes[i]));
+			for (ItemType itemType : itemTypes) {
+				indicesOfTypes.put(itemType, typeList.size());
+				typeList.add(new TypeItem(itemType));
 			}
 		}
 
@@ -279,7 +281,7 @@ public class GuiHunterBench extends MHFCTabbedGui {
 
 	protected class CraftUpgradeTab extends FilteredRecipeTab {
 		public CraftUpgradeTab(TileHunterBench bench) {
-			super(bench, RecipeType.UPGRADE, ItemType.values());
+			super(bench, RecipeType.UPGRADE, ItemType.allTypes);
 			typeList.setItemWidth(20);
 		}
 	}
@@ -609,7 +611,6 @@ public class GuiHunterBench extends MHFCTabbedGui {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public void initGui() {
 		buttonList.add(startCrafting);

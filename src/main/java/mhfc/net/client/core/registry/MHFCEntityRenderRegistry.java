@@ -17,6 +17,7 @@ import mhfc.net.client.render.projectile.RenderBlockProjectile;
 import mhfc.net.client.render.projectile.RenderBreathe;
 import mhfc.net.client.render.projectile.RenderBullet;
 import mhfc.net.client.render.projectile.RenderNargacugaSpike;
+import mhfc.net.client.render.projectile.RenderPaintball;
 import mhfc.net.client.render.projectile.RenderRathalosFireball;
 import mhfc.net.client.render.projectile.RenderWyverniaArrow;
 import mhfc.net.common.entity.monster.EntityBarroth;
@@ -33,6 +34,7 @@ import mhfc.net.common.entity.monster.EntityTigrex;
 import mhfc.net.common.entity.monster.EntityUkanlos;
 import mhfc.net.common.entity.projectile.EntityBreathe;
 import mhfc.net.common.entity.projectile.EntityBullet;
+import mhfc.net.common.entity.projectile.EntityPaintball;
 import mhfc.net.common.entity.projectile.EntityProjectileBlock;
 import mhfc.net.common.entity.projectile.EntityRathalosFireball;
 import mhfc.net.common.entity.projectile.EntityWyverniaArrow;
@@ -52,7 +54,7 @@ public class MHFCEntityRenderRegistry {
 	private static void renderMonster() {
 		//AdvanceRender
 		advanceRenderer(EntityNargacuga.class, new RenderNargacuga());
-		
+
 		//BasicRender
 		basicRenderer(
 				EntityTigrex.class,
@@ -78,7 +80,7 @@ public class MHFCEntityRenderRegistry {
 				MHFCReference.mob_lagiacrus_model,
 				MHFCReference.mob_lagiacrus_skeleton,
 				1.0F);
-		
+
 		basicRenderer(
 				EntityDeviljho.class,
 				MHFCReference.mob_deviljho_textureDir,
@@ -109,8 +111,7 @@ public class MHFCEntityRenderRegistry {
 				MHFCReference.mob_barroth_model,
 				MHFCReference.mob_barroth_skeleton,
 				1.0F);
-		
-		
+
 		registerAnimatedRenderer(EntityGiaprey.class, MHFCReference.mob_giaprey_model, 1.0F);
 		registerAnimatedRenderer(EntityUkanlos.class, MHFCReference.mob_ukanlos_model, 1.0F);
 
@@ -119,6 +120,7 @@ public class MHFCEntityRenderRegistry {
 	private static void renderBlockEntities() {
 		RenderingRegistry.registerEntityRenderingHandler(EntityProjectileBlock.class, new RenderBlockProjectile());
 		RenderingRegistry.registerEntityRenderingHandler(EntityRathalosFireball.class, new RenderRathalosFireball());
+		RenderingRegistry.registerEntityRenderingHandler(EntityPaintball.class, new RenderPaintball());
 		RenderingRegistry.registerEntityRenderingHandler(EntityWyverniaArrow.class, new RenderWyverniaArrow());
 		RenderingRegistry.registerEntityRenderingHandler(EntityBullet.class, new RenderBullet());
 		RenderingRegistry.registerEntityRenderingHandler(EntityBreathe.class, new RenderBreathe());

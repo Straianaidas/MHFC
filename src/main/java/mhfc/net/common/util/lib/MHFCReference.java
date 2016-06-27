@@ -240,7 +240,7 @@ public class MHFCReference {
 	public static final String entity_rathalosfireball_tex = "mhfc:textures/projectile/rathalosfireball.png";
 	public static final String entity_tigrexBlock_name = "TigrexBlock";
 	public static final String entity_bullet_name = "Bullet";
-	public static final String entity_flashbomb_name = "Flashbomb";
+	public static final String entity_flashbomb_name = "Flash bomb";
 	public static final String gui_board_tex = "mhfc:textures/gui/MHFCBackground.png";
 	public static final String gui_hunterbench_back_tex = "mhfc:textures/gui/MHFCCraftStation.png";
 	public static final String gui_hunterbench_burn_back_tex = "mhfc:textures/gui/OvenHeat.png";
@@ -392,7 +392,7 @@ public class MHFCReference {
 	public static final String item_lumberbar_name = "lumberbar";
 	public static final String item_mhfcspawnegg_icon = "mhfc:mhfegg";
 	public static final String item_mhfcspawnegg_name = "mhfcegg";
-	public static final String item_mhfcspawnegg_overlay_icon = "mhfc:mhfegg_overlay";
+	public static final String item_mhfcspawnegg_overlay_icon = "mhfc:tools/horn_overlay";
 	public static final String item_moldediron_icon = "mhfc:moldediron";
 	public static final String item_moldediron_name = "moldediron";
 
@@ -418,39 +418,39 @@ public class MHFCReference {
 
 	// If something persist or crash and pointed at this line of codes. probably
 	// you have a wrong input of directory @Heltrato
-	
+
 	// Resource General Location
 	public static final String modelLoc = "mhfc:models/";
 	public static final String textureLoc = "mhfc:textures/models/";
-	
+
 	// Tigrex
 	public static final String mob_tigrex_name = "tigrex";
 	public static final String mob_tigrex_dir = modelLoc + "Tigrex/";
 	public static final String mob_tigrex_textureDir = textureLoc + "Tigrex/";
 	public static final String mob_tigrex_model = mob_tigrex_dir + "Tigrex.mcmd";
 	public static final String mob_tigrex_skeleton = mob_tigrex_dir + "Armature.mcskl";
-	
+
 	// Rathalos
 	public static final String mob_rathalos_name = "rathalos";
 	public static final String mob_rathalos_dir = modelLoc + "Rathalos/";
 	public static final String mob_rathalos_textureDir = textureLoc + "Rathalos/";
 	public static final String mob_rathalos_model = mob_rathalos_dir + "Rathalos.mcmd";
 	public static final String mob_rathalos_skeleton = mob_rathalos_dir + "Armature.mcskl";
-	
+
 	// Great Jaggi
 	public static final String mob_greatjaggi_name = "greatjaggi";
 	public static final String mob_greatjaggi_dir = modelLoc + "GreatJaggi/";
 	public static final String mob_greatjaggi_textureDir = textureLoc + "GreatJaggi/";
 	public static final String mob_greatjaggi_model = mob_greatjaggi_dir + "GreatJaggi.mcmd";
 	public static final String mob_greatjaggi_skeleton = mob_greatjaggi_dir + "Armature.mcskl";
-	
+
 	// Lagiacrus
 	public static final String mob_lagiacrus_name = "lagiacrus";
 	public static final String mob_lagiacrus_dir = modelLoc + "Lagiacrus/";
 	public static final String mob_lagiacrus_textureDir = textureLoc + "Lagiacrus/";
 	public static final String mob_lagiacrus_model = mob_lagiacrus_dir + "Lagiacrus.mcmd";
 	public static final String mob_lagiacrus_skeleton = mob_lagiacrus_dir + "Armature.mcskl";
-	
+
 	// Delex
 	public static final String mob_delex_name = "delex";
 	public static final String mob_delex_dir = modelLoc + "Delex/";
@@ -458,61 +458,63 @@ public class MHFCReference {
 	public static final String mob_delex_model = mob_delex_dir + "PDelex.mcmd";
 	public static final String mob_delex_skeleton = mob_delex_dir + "Armature.mcskl";
 
-	// Nargacuga 
+	// Nargacuga
 	public static final String mob_nargacuga_name = "nargacuga";
 	public static final String mob_nargacuga_dir = modelLoc + "Nargacuga/";
 	public static final String mob_nargacuga_textureDir = textureLoc + "Nargacuga/";
 	public static final String mob_nargacuga_model = mob_nargacuga_dir + "Nargacuga.mcmd";
 	public static final String mob_nargacuga_skeleton = mob_nargacuga_dir + "Armature.mcskl";
-	
+
 	// Deviljho
 	public static final String mob_deviljho_name = "deviljho";
 	public static final String mob_deviljho_dir = modelLoc + "Deviljho/";
 	public static final String mob_deviljho_textureDir = textureLoc + "Deviljho/";
 	public static final String mob_deviljho_model = mob_deviljho_dir + "Deviljho.mcmd";
 	public static final String mob_deviljho_skeleton = mob_deviljho_dir + "Armature.mcskl";
-	
+
 	// Kirin
 	public static final String mob_kirin_name = "kirin";
 	public static final String mob_kirin_dir = modelLoc + "Kirin/";
 	public static final String mob_kirin_textureDir = textureLoc + "Kirin/";
 	public static final String mob_kirin_model = mob_kirin_dir + "Kirin.mcmd";
 	public static final String mob_kirin_skeleton = mob_kirin_dir + "Armature.mcskl";
-	
+
 	//Gagua
 	public static final String mob_gagua_name = "gagua";
 	public static final String mob_gagua_dir = modelLoc + "Gagua/";
 	public static final String mob_gagua_textureDir = textureLoc + "Gagua/";
 	public static final String mob_gagua_model = mob_gagua_dir + "Gagua.mcmd";
 	public static final String mob_gagua_skeleton = mob_gagua_dir + "Armature.mcskl";
-			
-	
+
 	// Barroth
 	public static final String mob_barroth_name = "barroth";
 	public static final String mob_barroth_dir = modelLoc + "Barroth/";
 	public static final String mob_barroth_textureDir = textureLoc + "Barroth/";
 	public static final String mob_barroth_model = mob_barroth_dir + "Barroth.mcmd";
 	public static final String mob_barroth_skeleton = mob_barroth_dir + "Armature.mcskl";
-	
+
 	// Giaprey
 	public static final String mob_giaprey_name = "giaprey";
 	public static final String mob_giaprey_model = modelLoc + "Giaprey/Giaprey.mcmd";
-	
+
 	// Ukanlos
 	public static final String mob_ukanlos_name = "ukanlos";
 	public static final String mob_ukanlos_model = modelLoc + "Ukanlos/Ukanlos.mcmd";
 
+	// WARNING: YOU HAVE TO GENERATE A NEW UUID FOR EVERY POTION
+	// go to https://www.uuidgenerator.net/ to do so
 	public static final String particle_kirinsfx_tex = "mhfc:textures/particle/kirinSFX.png";
 	public static final String potion_attackup_name = "potion.attackuplow";
 	public static final String potion_attackup_uuid = "6a80c830-745d-4edd-8a17-e580f813bf20";
 	public static final String potion_longsworddamageup_name = "potion.longswordattackup";
-	public static final String potion_longsworddamageup_uuid = "6a80c830-745d-4edd-8a17-e580f813bf20";
+	public static final String potion_longsworddamageup_uuid = "e6f4502b-1242-4024-bc5e-e89f47fcda76";
 	public static final String potion_kirinbless_name = "potion.kirinbless";
 	public static final String potion_kirinbless_tex = "mhfc:textures/potion/mhfcpotion.png";
-	public static final String potion_kirinbless_uuid = "6a80c830-745d-4edd-8a17-e580f813bf20";
+	public static final String potion_kirinbless_uuid = "97bd1ec2-4a75-43cc-b81b-e281503c2ffe";
 	public static final String potion_paralyze_name = "potion.paralyze";
 	public static final String potion_paralyze_tex = "mhfc:textures/potion/mhfcpotion.png";
-	public static final String potion_paralyze_uuid = "6a80c830-745d-4edd-8a17-e580f813bf20";
+	public static final String potion_paralyze_uuid = "07c8c0a3-5bd7-4ca3-a984-bb9bdacf4496";
+
 	public static final String tile_akuracrystal_tex = "mhfc:textures/tile/akuracrystal.png";
 	public static final String tile_armorstand_id = "Armor Stand";
 	public static final String tile_armorstand_tex = "mhfc:textures/tile/armorstand.png";
@@ -553,6 +555,8 @@ public class MHFCReference {
 	public static final String weapon_gs_rathalos_tex = "mhfc:textures/weapons/(GS)rathalosfiresword.png";
 	public static final String weapon_gs_deadlyserpentblade_name = "greatsword_6";
 	public static final String weapon_gs_deadlyserpentblade_tex = "mhfc:textures/weapons/(GS)deadlyserpentblade.png";
+
+	public static final String weapon_hh_notesound = "mhfc:huntinghorn.play";
 
 	public static final String weapon_hh_default_icon = "mhfc:huntinghorn";
 	public static final String weapon_hh_metalbagpipe_name = "huntinghorn_1";
@@ -656,7 +660,10 @@ public class MHFCReference {
 	public static final String projectile_nargacugaspike_name = "Nargacuga Spike";
 	public static final String projectile_nargacugaspike_tex = "mhfc:textures/projectile/bullet0.png";
 
-	public static final String gui_questgiver_back_tex = "mhfc:texture/gui/questgiver.png";
+	public static final String gui_questgiver_back_tex = "mhfc:textures/gui/questgiver.png";
+	public static final String gui_huntinghorn_stave = "mhfc:textures/gui/notesheet.png";
+	public static final String gui_huntinghorn_note = "mhfc:textures/gui/notes.png";
+	public static final String gui_longsword_gauge = "mhfc:textures/gui/spiritgauge.png";
 
 	public static final int gui_hunterbench_id = 1;
 	public static final int gui_questgiver_id = 2;
@@ -685,4 +692,59 @@ public class MHFCReference {
 	public static final String questLocation = "mhfc:quests/quests.json";
 	public static final String goalLocation = "mhfc:quests/goals.json";
 	public static final String groupLocation = "mhfc:quests/groups.json";
+
+	public static final String base_gear_fauld = "mhfc:gear/fauld";
+	public static final String base_gear_head = "mhfc:gear/head";
+	public static final String base_gear_body = "mhfc:gear/body";
+	public static final String base_gear_knife = "mhfc:gear/knife";
+	public static final String base_gear_leg = "mhfc:gear/leg";
+	public static final String base_gear_phial_empty = "mhfc:gear/phial_empty";
+	public static final String base_gear_phial_full = "mhfc:gear/phial_full";
+	public static final String base_gear_bullet = "mhfc:gear/shell";
+
+	public static final String base_misc_armorgem = "mhfc:misc/armor_gem";
+	public static final String base_misc_armorsphere = "mhfc:misc/armor_sphere";
+	public static final String base_misc_bait = "mhfc:misc/bait";
+	public static final String base_misc_berry = "mhfc:misc/berry";
+	public static final String base_misc_bug = "mhfc:misc/bug";
+	public static final String base_misc_cert = "mhfc:misc/cert";
+	public static final String base_misc_dung = "mhfc:misc/dung";
+	public static final String base_misc_fish = "mhfc:misc/fish";
+	public static final String base_misc_husk = "mhfc:misc/husk";
+	public static final String base_misc_meat = "mhfc:misc/meat";
+	public static final String base_misc_mystery = "mhfc:misc/mystery";
+	public static final String base_misc_ore = "mhfc:misc/ore";
+	public static final String base_misc_shroom = "mhfc:misc/shroom";
+	public static final String base_misc_smoke = "mhfc:misc/smoke";
+	public static final String base_misc_token = "mhfc:misc/token";
+	public static final String base_misc_vine = "mhfc:misc/vine";
+
+	public static final String base_monster_bone = "mhfc:monster/bone";
+	public static final String base_monster_carapace = "mhfc:monster/carapace";
+	public static final String base_monster_gem = "mhfc:monster/gem";
+	public static final String base_monster_mantle = "mhfc:monster/mantle";
+	public static final String base_monster_part = "mhfc:monster/part";
+	public static final String base_monster_pelt = "mhfc:monster/pelt";
+	public static final String base_monster_sac = "mhfc:monster/sac";
+	public static final String base_monster_scale = "mhfc:monster/scale";
+	public static final String base_monster_sharp = "mhfc:monster/sharp";
+	public static final String base_monster_webbing = "mhfc:monster/webbing";
+
+	public static final String base_tool_barrel = "mhfc:tools/barrel";
+	public static final String base_tool_book = "mhfc:tools/book";
+	public static final String base_tool_boomerang = "mhfc:tools/boomerang";
+	public static final String base_tool_horn = "mhfc:tools/horn";
+	public static final String base_tool_kit = "mhfc:tools/kit";
+	public static final String base_tool_map = "mhfc:tools/map";
+	public static final String base_tool_net = "mhfc:tools/net";
+	public static final String base_tool_pick = "mhfc:tools/pick";
+	public static final String base_tool_potion = "mhfc:tools/potion";
+	public static final String base_tool_trap = "mhfc:tools/trap";
+	public static final String base_tool_whestone = "mhfc:tools/whestone";
+
+	public static final String item_paintball_basename = "paintball";
+	public static final String entity_paintball_name = "Paintball";
+	public static final int max_duration_particle_emitter_in_ticks = 1200;
+	public static final String mob_paint_emitter_name = "paintemitter";
+
 }

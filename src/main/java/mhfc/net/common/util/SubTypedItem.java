@@ -5,6 +5,7 @@ import java.util.Objects;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import mhfc.net.common.item.ItemColor;
 import mhfc.net.common.util.SubTypedItem.SubTypeEnum;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -54,6 +55,10 @@ public class SubTypedItem<I, T extends Enum<T> & SubTypeEnum<I>> {
 		 * @return
 		 */
 		public int ordinal();
+
+		public default ItemColor getColor() {
+			return ItemColor.WHITE;
+		}
 	}
 
 	/**
